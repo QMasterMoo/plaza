@@ -1,0 +1,3 @@
+rm data/plazadb.sqlite3
+sqlite3 data/plazadb.sqlite3 < sql/plazascheme.sql
+sqlite3 data/plazadb.sqlite3 < sql/plazadata.sql

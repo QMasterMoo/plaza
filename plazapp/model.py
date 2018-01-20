@@ -3,9 +3,6 @@ import flask
 import plazapp
 
 #this will connect to our database
-def test():
-	print('Hello')
-
 def get_db():
 	if not hasattr(flask.g, 'sqlite_db'):
 		flask.g.sqlite_db = sqlite.connect(plaza.app.config['DATABASE_FILENAME'])

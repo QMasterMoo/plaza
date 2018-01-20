@@ -19,8 +19,30 @@ def close_db(error):
 		flask.g.sqlite_db.close()
 
 
-def get_comments():
+def get_comments(postid):
+	cursor = get_db()
+	cursor.execute("SELECT commentid FROM comments WHERE commentid = %d" % postid)
+	print(cursor.fetchall())
+	
+def get_commentor():
+	cursor = get_db()
+	cursor.exeute("SELECT userid FROM comments WHERE userid = 1")
+	print(cursor.fetchall())
+	
+def get_username():
 	cursor = get_db()
 	cursor.execute("SELECT username FROM users WHERE userid = 1")
+	print(cursor.ferchall())
+	
+def get_posts():
+	cursor = get_db()
+	cursor.execute("SELECT postid FROM posts WHERE postid = 1")
 	print(cursor.fetchall())
+	
+def get_poster():
+	cursor = get_db()
+	cursor.execute("SELECT userid FROM comments WHERE commentid = 1")
+	print(cursor.fetchall())
+	
+	
 	

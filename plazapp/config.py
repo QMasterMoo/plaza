@@ -10,4 +10,4 @@ UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 MAX_CONTENT_LENGHT = 16*1024*1024
 
-DATABASE_FILENAME = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'data', 'plazapp.sqlite3')
+DATABASE_FILENAME = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'data', 'plazadb.sqlite3')

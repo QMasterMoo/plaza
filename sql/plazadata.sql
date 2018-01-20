@@ -1,5 +1,5 @@
-INSERT INTO users(username, userid, password)
-VALUES ('sac', '1', 'fish123');
+INSERT INTO users(username, userid, password, salt)
+VALUES ('sac', '1', 'fish123', 'a1b2');
 
 INSERT INTO posts(postid, postcontent, ownerid)
 VALUES ('1', 'This is the first content', '1');

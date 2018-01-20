@@ -1,21 +1,25 @@
 CREATE TABLE users(
 	username VARCHAR(20) NOT NULL,
-	userid VARCHAR(40) NOT NULL,
+	userid INTEGER NOT NULL,
 	password VARCHAR(256) NOT NULL,
-	PRIMARY KEY(username)
+	salt VARCHAR(16) NOT NULL,
+	PRIMARY KEY(userid)
 	);
 	
 CREATE TABLE posts(
 	postid INTEGER NOT NULL,
 	postcontent TEXT(500) NOT NULL,
-	ownerid VARCHAR(20) NOT NULL,
-	PRIMARY KEY(postid)
+	ownerid INTEGER NOT NULL,
+	PRIMARY KEY(postid),
+	FOREIGN KEY(ownerid)
 	);
 	
 CREATE TABLE comments(
 	commentid INTEGER NOT NULL,
-	userid VARCHAR(40) NOT NULL,
+	userid INTEGER NOT NULL,
 	commentcontent TEXT(500) NOT NULL,
-	PRIMARY KEY(commentid)
+	PRIMARY KEY(commentid),
+	FOREIGN KEY(userid)
 	);
+
 	

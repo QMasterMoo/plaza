@@ -1,8 +1,8 @@
 INSERT INTO users(username, userid, password)
-VALUES ('sac', 'sac123', 'fish123');
+VALUES ('sac', '1', 'fish123');
 
 INSERT INTO posts(postid, postcontent, ownerid)
-VALUES ('1', 'This is the first content', 'sac123');
+VALUES ('1', 'This is the first content', '1');
 
 INSERT INTO comments(commentid, userid, commentcontent)
-VALUES ('1', 'sac123', 'fuckin first comment biatch');
+VALUES ('1', '1', 'fuckin first comment biatch');

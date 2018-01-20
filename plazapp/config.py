@@ -2,6 +2,7 @@ import os
 
 APPLICATION_ROOT = '/'
 
+# this key will be changed, I promise we don't leave secrets in the public
 SECRET_KEY = b'\xfb\x1d\x8a\x92\xb1\xc1\xc4\xb8\xf6{\xef\n\xa3\xd4L\x86\xb9\x81\x1e\xbb\xc3\x1d\xb9\xc8'
 SESSION_COOKIE_NAME = 'login'
 

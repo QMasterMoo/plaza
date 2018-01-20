@@ -4,7 +4,11 @@
 	background-color:white;
 	border-radius: 8px;
 }
+.parent-comment{
+	margin:auto;
+	padding-left:20%;
 
+}
 .post{
 	padding-top:15px;
 	padding-bottom:15px;
@@ -25,11 +29,17 @@
 	padding-bottom:15px;
 	padding-left:10%;
 	border-top: 3px solid black;
-	background-color: #d1d1d1;
 }
 
 .login{
 	padding-left: 20px;
+
+}
+input[type=text]{
+	width: 80%;
+}
+input[name=content]{
+	height: 150px;
 
 }
 header{
@@ -44,3 +54,4 @@ header{
 body {
 	background-color:#d1d1d1;
 }
+

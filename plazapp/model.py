@@ -52,6 +52,7 @@ def check_hash(username, hash_in):
 	cursor = get_db().cursor()
 	cursor.execute("SELECT password FROM users WHERE username = '%s'" % username)
 	temp = cursor.fetchone()
+	print(temp)
 	if temp != None:
 		return temp[0] == hash_in
 	else:

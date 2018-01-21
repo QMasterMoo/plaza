@@ -13,9 +13,9 @@ def show_index():
         post3 = {'postid': 3, 'title':'ferda', 'commentcount': 3771}
         payload['posts'] = [post1, post2, post3]
         if log_status == "yes":
-                 payload['loggedin'] = True
-        else:
                  payload['loggedin'] = False
+        else:
+                 payload['loggedin'] = True
         
         response = make_response(flask.render_template("index.html", **payload))
         return response

@@ -13,7 +13,7 @@ def show_makepost():
 	return response
 
 @plazapp.app.route('/makepost.html', methods=['POST'])
-def show_makepost_post(post_id):
+def show_makepost_post():
 	payload = {}
 	# INSERT INTO DB
 	title = request.form['title']

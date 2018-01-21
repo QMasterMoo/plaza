@@ -3,7 +3,7 @@
 	<head>
 		<title>Plaza</title>
 
-		<link rel="stylesheet" type="text/css" href="css/index-style.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 	</head>
 
 	<body>
@@ -16,8 +16,8 @@
 
 			<section id="content">
 				<div class="post">
-					<h1>{{post.posttitle}}</h1>
-					<p>{{post.posttext}}</p>
+					<h1>{{posttitle}}</h1>
+					<p>{{posttext}}</p>
 				</div>
 				{% for comment in comments %}
 				<div class="comment">

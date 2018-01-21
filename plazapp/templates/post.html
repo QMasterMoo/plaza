@@ -10,25 +10,25 @@
 		<div class="container">
 			<header>
 				<div class="header">
-					<h><a href="index.html">PLAZA</a></h>
+					<h>PLAZA<h>
 				</div>
 			</header>
 
 			<section id="content">
 				<div class="post">
-					<h1>This is my first post</h1>
-					<p>Hi this is the text of my first post</p>
+					<h1>{{post.posttitle}}</h1>
+					<p>{{post.posttext}}</p>
 				</div>
+				{% for comment in comments %}
 				<div class="comment">
-					<p>I'm responding to this post</p>
-					<div class="comment">
-						<p>you are a liar!1!!</p>
-					</div>
+					<h>{{comment.commentid}}</h>
+					<p>{{comment.commenttext}}</p>
+					
 				</div>
+				{% endfor %}
 
-				<div class="comment">
-					<p>Welcome to plaza!!</p>
-				</div>
+
+				<p><a href="makecomment.html">Respond</a></p>
 			</section>
 		</div>
 	</body>

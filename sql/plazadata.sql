@@ -20,6 +20,9 @@ INSERT INTO comments(userid, postid, commentcontent)
 VALUES ('1', '1', 'fuckin first comment biatch');
 
 INSERT INTO comments(userid, postid, commentcontent)
+VALUES ('1', '1', 'fuckin second comment');
+
+INSERT INTO comments(userid, postid, commentcontent)
 VALUES ('2', '2', 'fuckin second comment biatch');
 
 INSERT INTO comments(userid, postid, commentcontent)

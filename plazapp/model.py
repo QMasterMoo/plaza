@@ -45,12 +45,6 @@ def get_username():
 	cursor.execute("SELECT username FROM users WHERE userid = 1")
 	print(cursor.fetchall())
 	
-def get_posts():
-	cursor = get_db().cursor()
-	cursor.execute("SELECT postid FROM posts WHERE postid = 1")
-	temp = cursor.fetchall()
-	return temp
-	
 def get_poster():
 	cursor = get_db().cursor()
 	cursor.execute("SELECT userid FROM comments WHERE commentid = 1")
@@ -82,4 +76,4 @@ def get_uid(username):
 def get_posts(postcount):
 	cursor = get_db().cursor()
 	cursor.execute("SELECT * FROM posts ORDER BY postid DESC LIMIT %d" % postcount)
-	print(cursor.fetchall())
+	return cursor.fetchall()

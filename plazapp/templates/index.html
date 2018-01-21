@@ -24,8 +24,8 @@
 				{% for post in posts %}
       				<div class="post">
 						
-					<h><a href="/p/{{post.title}}">{{post.title}}</a> </h>
-					<p>{{post.commentcount}}</p>
+					<h><a href="/p/{{post.pid}}">{{post.title}}</a> </h>
+					<p>Comments: {{post.commentcount}}</p>
       				</div>
 				{% endfor %}
 			</div>

@@ -2,4 +2,4 @@
 export FLASK_DEBUG=True
 export FLASK_APP=plazapp
 export FLASKAPP_SETTINGS=config.py
-flask run --host 144.217.10.224 --port 8123
+flask run --host 144.217.10.224 --port 8222

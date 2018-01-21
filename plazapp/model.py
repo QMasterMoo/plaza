@@ -20,11 +20,21 @@ def close_db(error):
 
 def get_comments(post_id):
 	cursor = get_db().cursor()
-	cursor.execute("SELECT * FROM comments WHERE postid=%d" % post_id)
+	cursor.execute("SELECT * FROM comments WHERE postid=%s" % post_id)
 	temp = cursor.fetchall()
 	print(temp)
 	return temp
 	
+def get_title(post_id):
+	cursor = get_db().cursor()
+	cursor.execute("SELECT posttitle FROM posts WHERE postid=%s" % post_id)
+	return cursor.fetchone()[0]
+
+def get_posttext(post_id):
+	cursor = get_db().cursor()
+	cursor.execute("SELECT postcontent FROM posts WHERE postid=%s" % post_id)
+	return cursor.fetchone()[0]
+
 def get_commentor():
 	cursor = get_db().cursor()
 	cursor.execute("SELECT userid FROM comments WHERE userid = 1")
@@ -38,7 +48,7 @@ def get_username():
 def get_posts():
 	cursor = get_db().cursor()
 	cursor.execute("SELECT postid FROM posts WHERE postid = 1")
-	print(cursor.fetchall())
+	return cursor.fetchall()
 	
 def get_poster():
 	cursor = get_db().cursor()

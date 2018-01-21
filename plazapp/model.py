@@ -48,7 +48,8 @@ def get_username():
 def get_posts():
 	cursor = get_db().cursor()
 	cursor.execute("SELECT postid FROM posts WHERE postid = 1")
-	return cursor.fetchall()
+	temp = cursor.fetchall()
+	return temp
 	
 def get_poster():
 	cursor = get_db().cursor()

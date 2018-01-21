@@ -21,7 +21,9 @@ def close_db(error):
 def get_comments(post_id):
 	cursor = get_db().cursor()
 	cursor.execute("SELECT * FROM comments WHERE postid=%d" % post_id)
-	print(cursor.fetchall())
+	temp = cursor.fetchall()
+	print(temp)
+	return temp
 	
 def get_commentor():
 	cursor = get_db().cursor()

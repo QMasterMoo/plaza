@@ -16,7 +16,7 @@ def show_index():
         for post in posts:
             post_dict = {}
             post_dict['title'] = post[3]
-            post_dict['pid'] = post[2]
+            post_dict['pid'] = post[0]
             post_dict['commentcount'] = randint(1, 100)
             payload['posts'].append(post_dict)
 

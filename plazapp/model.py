@@ -71,9 +71,18 @@ def check_hash(username, hash_in):
 def get_uid(username):
 	cursor = get_db().cursor()
 	cursor.execute("SELECT userid FROM users WHERE username='%s'" % username)
-	return cursor.fetchone()[0]
+	# retur None if fetchone is None
+	temp = cursor.fetchone()
+	if temp == None:
+		return None
+	else:
+		return temp[0]
 
 def get_posts(postcount):
 	cursor = get_db().cursor()
 	cursor.execute("SELECT * FROM posts ORDER BY postid DESC LIMIT %d" % postcount)
 	return cursor.fetchall()
+
+def create_user(username, salt, password):
+	cursor = get_db().cursor()
+	cursor.execute("INSERT INTO users(username, password, salt) VALUES ('%s', '%s', '%s')" % (username, password, salt))

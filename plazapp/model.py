@@ -51,7 +51,11 @@ def set_comment(userid, postid, content):
 def check_hash(username, hash_in):
 	cursor = get_db().cursor()
 	cursor.execute("SELECT password FROM users WHERE username = '%s'" % username)
-	return cursor.fetchone()[0] == hash_in
+	temp = cursor.fetchone()
+	if temp != None:
+		return temp[0] == hash_in
+	else:
+		return False
 
 def get_uid(username):
 	cursor = get_db().cursor()

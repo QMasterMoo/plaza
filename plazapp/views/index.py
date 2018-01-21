@@ -15,12 +15,7 @@ def show_index():
         if log_status == "yes":
                  payload['loggedin'] = True
         else:
-                 payload['loggedin'] = True
+                 payload['loggedin'] = False
         
         response = make_response(flask.render_template("index.html", **payload))
-        get_comments()
-        get_commentor()
-        get_username()
-        get_posts()
-        get_poster()
         return response

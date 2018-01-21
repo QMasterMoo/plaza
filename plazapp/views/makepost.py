@@ -19,8 +19,11 @@ def show_makepost_post():
 	title = request.form['title']
 	content = request.form['content']
 	uid = request.cookies.get('uid')
-	set_post(uid, title, content)
-
-	response = redirect("/", 302)
+	# Confirm user logged in
+	if uid == None or uid == '0':
+		response = redirect("/login.html", code=302)
+	else:
+		set_post(uid, title, content)
+		response = redirect("/", 302)
 
 	return response

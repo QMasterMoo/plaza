@@ -20,8 +20,15 @@ def show_makecomment_post(post_id):
 	# INSERT INTO DB
 	content = request.form['content']
 	uid = request.cookies.get('uid')
-	set_comment(uid, post_id, content)
+	
+	# Confirm user logged in
+	if uid == None or uid == '0':
+		response = redirect("/login.html", code=302)
+	else:
+		set_comment(uid, post_id, content)
+		response = redirect("/p/%s" % post_id, 302)
 
-	response = redirect("/p/%s" % post_id, 302)
+
+	
 
 	return response

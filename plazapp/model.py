@@ -58,8 +58,12 @@ def get_poster():
 	
 def set_comment(userid, postid, content):
 	cursor = get_db().cursor()
-	cursor.execute("INSERT INTO comments(userid, postid, commentcontent) VALUES('%d', '%d', '%s')" % (userid, postid, content))
-	print(cursor.fetchall())
+	cursor.execute("INSERT INTO comments(userid, postid, commentcontent) VALUES('%s', '%s', '%s')" % (userid, postid, content))
+
+def set_post(ownerid, title, content):
+	cursor = get_db().cursor()
+	cursor.execute("INSERT INTO posts(postcontent, ownerid, posttitle) VALUES ('%s', '%s', '%s')" % (content, ownerid, title))
+	
 	
 def check_hash(username, hash_in):
 	cursor = get_db().cursor()

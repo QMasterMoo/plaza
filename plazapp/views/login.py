@@ -2,6 +2,7 @@ import flask
 from flask import request, make_response, redirect
 import plazapp
 from plazapp.do_login_things import hash_password
+from plazapp.model import check_hash, get_uid
 
 @plazapp.app.route('/login.html')
 def show_login():
@@ -29,18 +30,16 @@ def show_login_post():
 
 	hashword = hash_password(username, password)[1]
 
-	# check if hash matches
+	hash_match = check_hash(username, hashword)
 
-	hash_match = True
 	payload = {}
 	# Render pages
 	if hash_match:
-		#response = make_response(flask.render_template("/", **payload))
 		response = redirect("/", code=302)
 		response.set_cookie('loggedin', 'yes')
 		# QUERY UID ON USERNAME
-		uid = 1
+		uid = get_uid(username)
 		response.set_cookie('uid', str(uid))
-		return response
-
+		print ("YOU WORK")
+	# Redirect to index
 	return redirect("/", code=302)

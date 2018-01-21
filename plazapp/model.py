@@ -48,9 +48,12 @@ def set_comment():
 	cursor.execute("INSERT INTO comments(commentid, userid, postid, commentcontent) VALUES('%d', '%d', '%d', '%s')")
 	print(cursor.fetchall())
 	
-def check_hash():
+def check_hash(username, hash_in):
 	cursor = get_db().cursor()
-	cursor.execute("SELECT userid FROM users WHERE username = '%s'")
-	print(cursor.fetchall())
-	
-	
+	cursor.execute("SELECT password FROM users WHERE username = '%s'" % username)
+	return cursor.fetchone()[0] == hash_in
+
+def get_uid(username):
+	cursor = get_db().cursor()
+	cursor.execute("SELECT userid FROM users WHERE username='%s'" % username)
+	return cursor.fetchone()[0]

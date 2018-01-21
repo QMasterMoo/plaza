@@ -11,15 +11,15 @@ CREATE TABLE posts(
 	postcontent TEXT(500) NOT NULL,
 	ownerid INTEGER NOT NULL,
 	PRIMARY KEY(postid),
-	FOREIGN KEY(ownerid) REFERENCES user(userid)
+	FOREIGN KEY(ownerid) REFERENCES users(userid)
 	);
 	
 CREATE TABLE comments(
 	commentid INTEGER NOT NULL,
 	userid INTEGER NOT NULL,
+	postid INTEGER NOT NULL,
 	commentcontent TEXT(500) NOT NULL,
 	PRIMARY KEY(commentid),
-	FOREIGN KEY(userid) REFERENCES user(userid)
+	FOREIGN KEY(userid) REFERENCES users(userid)
 	);
 
-	

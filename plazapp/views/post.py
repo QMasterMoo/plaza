@@ -10,6 +10,7 @@ def show_post(post_id):
 	comments = get_comments(post_id)
 	payload['posttitle'] = get_title(post_id)
 	payload['posttext'] = get_posttext(post_id)
+	payload['postid'] = post_id
 
 	payload['comments'] = []
 	for comment in comments:

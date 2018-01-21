@@ -43,9 +43,9 @@ def get_poster():
 	cursor.execute("SELECT userid FROM comments WHERE commentid = 1")
 	print(cursor.fetchall())
 	
-def set_comment():
+def set_comment(userid, postid, content):
 	cursor = get_db().cursor()
-	cursor.execute("INSERT INTO comments(commentid, userid, postid, commentcontent) VALUES('%d', '%d', '%d', '%s')")
+	cursor.execute("INSERT INTO comments(userid, postid, commentcontent) VALUES('%d', '%d', '%s')" % (userid, postid, content))
 	print(cursor.fetchall())
 	
 def check_hash(username, hash_in):

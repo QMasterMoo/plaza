@@ -40,6 +40,6 @@ def show_login_post():
 		# QUERY UID ON USERNAME
 		uid = get_uid(username)
 		response.set_cookie('uid', str(uid))
-		print ("YOU WORK")
+		return response
 	# Redirect to index
 	return redirect("/", code=302)

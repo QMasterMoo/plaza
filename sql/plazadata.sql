@@ -7,14 +7,14 @@ VALUES ('al', 'ccdc76be3ffe8676a21fee1e957316028aa684662f628e40466e1ce2583313e91
 INSERT INTO users(username, password, salt)
 VALUES ('koni', 'fiszzh123', 'azz2');
 
-INSERT INTO posts(postcontent, ownerid)
-VALUES ('This is the first content', '1');
+INSERT INTO posts(postcontent, ownerid, posttitle)
+VALUES ('This is the first content', '1', 'title1');
 
-INSERT INTO posts(postcontent, ownerid)
-VALUES ('This is the first content', '3');
+INSERT INTO posts(postcontent, ownerid, posttitle)
+VALUES ('This is the first content', '3', 'title2');
 
-INSERT INTO posts(postcontent, ownerid)
-VALUES ('This is the first content', '3');
+INSERT INTO posts(postcontent, ownerid, posttitle)
+VALUES ('This is the first content', '3', 'title3');
 
 INSERT INTO comments(userid, postid, commentcontent)
 VALUES ('1', '1', 'fuckin first comment biatch');

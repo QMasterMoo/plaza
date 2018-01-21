@@ -9,6 +9,7 @@ CREATE TABLE posts(
 	postid INTEGER PRIMARY KEY AUTOINCREMENT,
 	postcontent TEXT(500) NOT NULL,
 	ownerid INTEGER NOT NULL,
+	posttitle VARCHAR(50) NOT NULL,
 	FOREIGN KEY(ownerid) REFERENCES users(userid)
 	);
 	

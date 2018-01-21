@@ -29,7 +29,7 @@ def show_login_post():
 	password = flask.request.values.get('password')
 
 	hashword = hash_password(username, password)[1]
-	
+
 	hash_match = check_hash(username, hashword)
 
 	payload = {}
@@ -40,8 +40,6 @@ def show_login_post():
 		# QUERY UID ON USERNAME
 		uid = get_uid(username)
 		response.set_cookie('uid', str(uid))
-		print ('log')
 		return response
 	# Redirect to index
-	print ('no log')
 	return redirect("/login.html", code=302)

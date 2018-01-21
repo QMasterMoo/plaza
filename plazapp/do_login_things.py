@@ -8,4 +8,5 @@ def hash_password(username, password):
 	combined = salt + password
 	hashboy.update(combined.encode('utf-8'))
 	password_hash = hashboy.hexdigest()
+	print (salt, password_hash)
 	return (salt, password_hash)
